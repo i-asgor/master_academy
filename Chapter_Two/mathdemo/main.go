@@ -17,4 +17,7 @@ func main() {
 
 	e := math.Cos(b)
 	fmt.Printf("Cos(%.2f) = %.2f\n", b, e)
+
+	s := math.Sqrt(a * b)
+	fmt.Printf("Sqrt(%.2f * %.2f) = %.2f\n", a, b, s)
 }
