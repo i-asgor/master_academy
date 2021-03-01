@@ -23,4 +23,12 @@ func main() {
 
 	fmt.Println("value of city : ", city)
 	fmt.Println("value of x : ", x)
+
+	fmt.Println("===========================")
+
+	country := "Bangladesh"
+	de := 15
+
+	fmt.Println("values of country : ", country)
+	fmt.Println("values of de : ", de)
 }
