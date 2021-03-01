@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	var a, b int
 
-	a = 30
+	a = 55
 	b = 15
 
 	add := a + b
@@ -17,7 +17,10 @@ func main() {
 	multiplication := a * b
 	fmt.Printf("%d * %d = %d \n", a, b, multiplication)
 
-	division := a / b
-	fmt.Printf("%d / %d = %d  \n", a, b, division)
+	division := float32(a) / float32(b)
+	fmt.Printf("%d / %d = %.2f  \n", a, b, division)
+
+	modulus := a % b
+	fmt.Printf("%d %% %d = %d", a, b, modulus)
 
 }
