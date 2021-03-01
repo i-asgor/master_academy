@@ -31,4 +31,18 @@ func main() {
 
 	fmt.Println("values of country : ", country)
 	fmt.Println("values of de : ", de)
+	fmt.Println("===========================")
+
+	var (
+		name  string
+		email string
+		age   int
+	)
+	name = "Asgor"
+	email = "asgor.ice@gmail.com"
+	age = 30
+
+	fmt.Println("my name is : ", name)
+	fmt.Println("my email address : ", email)
+	fmt.Println(name, " age is : ", age)
 }
