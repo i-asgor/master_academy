@@ -16,4 +16,11 @@ func main() {
 	fmt.Println("value of n", n)
 	fmt.Println("value of m", m)
 	fmt.Println("value of mn", mn)
+
+	fmt.Println("===========================")
+	var city string = "Dhaka"
+	var x int = 100
+
+	fmt.Println("value of city : ", city)
+	fmt.Println("value of x : ", x)
 }
