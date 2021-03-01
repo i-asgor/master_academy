@@ -3,20 +3,21 @@ package main
 import "fmt"
 
 func main() {
-	var a, b float32
+	var a, b int
 
-	a = 25
+	a = 30
 	b = 15
 
 	add := a + b
-	fmt.Println("Addition = ", add)
+	fmt.Printf("%d + %d = %d  \n", a, b, add)
 
 	sub := a - b
-	fmt.Println("Subtaction = ", sub)
+	fmt.Printf("%d - %d = %d  \n", a, b, sub)
 
 	multiplication := a * b
-	fmt.Println("Multiplication = ", multiplication)
+	fmt.Printf("%d * %d = %d \n", a, b, multiplication)
 
 	division := a / b
-	fmt.Println("Division = ", division)
+	fmt.Printf("%d / %d = %d  \n", a, b, division)
+
 }
