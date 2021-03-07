@@ -21,7 +21,7 @@ func main() {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, `Welcome to my first golang webpage with Coding Bootcamp`)
+	fmt.Fprintf(w, `<h1>Welcome to my first golang webpage with Coding Bootcamp</h1>`)
 }
 
 func contact(w http.ResponseWriter, r *http.Request) {
