@@ -4,12 +4,12 @@ import "fmt"
 
 func main(){
 
-//var name string = "MOSTAIN"
+//var name string = "asgor"
 //var name2 , city string = "MASTER-ACADEMY", "DHAKA"
 //fmt.Println(name , city, name2)
 
 /*
-var name string = "MOSTAIN"
+var name string = "asgor"
 var name2 , city string = "MASTER-ACADEMY", "DHAKA"
 fmt.Println(name , city, name2)
 */
