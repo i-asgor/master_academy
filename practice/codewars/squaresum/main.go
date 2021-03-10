@@ -12,6 +12,6 @@ func SquareSum(numbers []int) int{
 }
 
 func main(){
-	
-	fmt.Println(SquareSum([1,2,3]))
+	primes := [...]int{1,2,3}
+	fmt.Println(SquareSum(primes))
 }
