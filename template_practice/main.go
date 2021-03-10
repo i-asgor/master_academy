@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	ptmp, err := template.ParseFiles("one.html", "two.html")
+	ptmp, err := template.ParseFiles("two.html", "one.html")
 	if err != nil {
 		fmt.Println(err.Error())
 	}
