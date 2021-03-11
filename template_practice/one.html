@@ -9,7 +9,7 @@
 <body>
 	
    {{if .}}
-    <p>This is First page for {{.}}</p>
+    {{if eq  1000 .}} This is valid {{else}} Your value {{.}} {{end}}
     {{end}}
 </body>
 </html>
