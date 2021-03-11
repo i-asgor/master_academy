@@ -12,5 +12,5 @@ func main() {
 		fmt.Println(err.Error())
 	}
 
-	ptmp.Execute(os.Stdout, "asgor")
+	ptmp.Execute(os.Stdout, 1000)
 }
