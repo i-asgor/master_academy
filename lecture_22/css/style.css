@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.start-btn {
+    background-color: #7856FF;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+header {
+    background-color: #212121;
+    color: #fff;
+    padding: 1em 1em;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+}
+
+header .wrap {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+}
+
+header .menu {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-items: center;
+}
+
+header .btn-part {
+    justify-self: flex-end;
+}
+
+header .btn-part div {
+    display: inline;
+}
+
+header .btn-part .login-btn {
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px
+}
+
+header .btn-part .signup-btn {
+    background-color: #51CFDB;
+    color: #000;
+    font-size: 16px;
+}
+
+section.one {
+    padding-top: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-gap: 2em; */
+    padding: 8em 5em 0 5em;
+}
+
+.one .left-part {
+    width: 80%;
+}
+
+.one .left-part * {
+    margin: 10px 0;
+}
+
+.one .left-part h1 {
+    line-height: 1em;
+}
+
+.one .right-part {
+    width: 100%;
+}
+
+.one .right-part .img {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/header.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.two {
+    background-color: #EDEDED;
+    text-align: center;
+}
+
+.two img {
+    inline-size: 8em;
+}
+
+.two .logo-img {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 0 8em;
+    justify-items: center;
+}
+
+.two .logo-img>div {
+    width: 120px;
+    height: 80px;
+}
+
+.two .logo-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.two .partner h1 {
+    font-size: 2em;
+    font-weight: 500;
+    color: #383838;
+    padding: 0.5em;
+}
+
+.three {
+    display: grid;
+    grid-template-columns: 56% 44%;
+}
+
+.three .bg-img {
+    width: 98%;
+    height: 415px;
+    background-image: url(../img/cup-coffee-computer-keyboard.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.three .right-part {
+    padding: 4em 4em 0 2em;
+}
+
+.three .right-part * {
+    margin: 8px;
+}
+
+.three .explore {
+    border: 1px;
+    border-style: solid;
+    border-color: #7856FF;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.four .bg-img {
+    width: 98%;
+    height: 415px;
+    background-image: url(../img/section.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.four .bg-img .overlay {
+    height: 414px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: right;
+    position: relative;
+}
+
+.four .wrap {
+    width: 25%;
+    color: #fff;
+    top: 25%;
+    left: 75%;
+    position: absolute;
+    text-align: center;
+    transform: translate(-20%, -10%);
+}
+
+.four .wrap * {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #212121;
+    padding: 3em 5em;
+    color: #fff;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .part-one {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+footer .part-one .left-part {
+    margin: 0 1em;
+    position: relative;
+}
+
+footer .part-one .left-part .btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+footer .part-one .right-part {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+}
+
+footer .part-one .right-part * {
+    margin: 2px 0;
+}
+
+footer .part-one .right-part p {
+    color: rgba(255, 255, 255, .6);
+}
+
+hr {
+    background: #fff;
+    height: 1px;
+    border: none;
+    margin: 1em 0;
+}
+
+.condition {
+    text-align: center;
+    font-size: 14px;
+}
