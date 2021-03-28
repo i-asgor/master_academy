@@ -12,8 +12,14 @@ func main() {
 	// }
 	// fmt.Println(dir)
 
-	isErr := createFile("master_academy.txt", "hello golang is awesome")
-	fmt.Println(isErr)
+	// isErr := createFile("master_academy.txt", "hello golang is awesome")
+	// fmt.Println(isErr)
+
+	//how to make a folder
+	err := os.Mkdir("master_academy", 0777)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 }
 
 func createFile(fileName, content string) bool {
