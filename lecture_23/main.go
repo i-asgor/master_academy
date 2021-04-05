@@ -25,12 +25,19 @@ func main() {
 	// }
 	// fmt.Println("str number add : ", res)
 
+	// decode to encoding
 	stooges := [...]string{"asgor", "nasarul", "mahmud"}
 	bs, err := json.Marshal(stooges)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 	fmt.Println(bs)
+	fmt.Println("decode to encoding : ", string(bs))
+
+	// encoding to decode
+	var students interface{}
+	json.Unmarshal(bs, &students)
+	fmt.Println("encoding to decode : ", students)
 
 }
 
