@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"strconv"
 )
@@ -23,6 +24,14 @@ func main() {
 	// 	fmt.Println(i, res)
 	// }
 	// fmt.Println("str number add : ", res)
+
+	stooges := [...]string{"asgor", "nasarul", "mahmud"}
+	bs, err := json.Marshal(stooges)
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Println(bs)
+
 }
 
 func Sum2(nums ...interface{}) int64 {
