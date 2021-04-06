@@ -6,19 +6,30 @@ import (
 )
 
 func main() {
-	dir, err := os.Getwd()
+	// dir, err := os.Getwd()
+	// if err != nil {
+	// 	fmt.Println(err.Error())
+	// }
+
+	// fmt.Println(dir)
+
+	//posf.Close()
+	CreateFile("asgorfunc.txt", "This is text file with using another function")
+
+}
+
+func CreateFile(fileName, content string) bool {
+	posf, err := os.Create(fileName)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 
-	fmt.Println(dir)
+	defer posf.Close()
 
-	posf, err := os.Create("asgor.txt")
+	_, err = posf.Write([]byte(content))
+	// fmt.Println(n, err)
 	if err != nil {
-		fmt.Println(err.Error())
+		return false
 	}
-
-	n, err := posf.Write([]byte("This is a text file"))
-	fmt.Println(n, err)
-
+	return true
 }
