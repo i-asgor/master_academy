@@ -14,7 +14,18 @@ func main() {
 	// fmt.Println(dir)
 
 	//posf.Close()
-	CreateFile("asgorfunc.txt", "This is text file with using another function")
+	isErr := CreateFile("asgorfunc.txt", "This is text file with using another function")
+	fmt.Println(isErr)
+
+	fi, err := os.Stat("asgor.txt")
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+
+	fmt.Println(fi.IsDir())
+	fmt.Println(fi.ModTime().Date())
+	fmt.Println(fi.Name())
+	fmt.Println(fi.Size())
 
 }
 
