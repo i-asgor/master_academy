@@ -3,14 +3,13 @@ package main
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 )
 
 func main() {
-	dir, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err.Error())
-	}
+	// dir, err := os.Getwd()
+	// if err != nil {
+	// 	fmt.Println(err.Error())
+	// }
 
 	// fmt.Println(dir)
 
@@ -36,15 +35,16 @@ func main() {
 
 	// base := filepath.Base("./")
 	// base := filepath.Base("./master_academy")
-	base := filepath.Base(dir)
-	relativepath := filepath.Join("master_academy")
-	fullpath, _ := filepath.Abs("master_academy")
-	// D:\GALANG\src\master_academy\lecture_24\practice\master_academy
-	newpath := filepath.Join(fullpath, "..", "..", "lecture_24_backup")
-	fmt.Println(base)
-	fmt.Println(relativepath, "\n", fullpath, "\n", newpath)
+	// base := filepath.Base(dir)
+	// relativepath := filepath.Join("master_academy")
+	// fullpath, _ := filepath.Abs("master_academy")
 
-	os.Mkdir(newpath, 777)
+	// D:\GALANG\src\master_academy\lecture_24\practice\master_academy
+	// newpath := filepath.Join(fullpath, "..", "..", "lecture_24_backup")
+	// fmt.Println(base)
+	// fmt.Println(relativepath, "\n", fullpath, "\n", newpath)
+
+	os.Mkdir("D:\\TEST", 777)
 
 }
 
