@@ -39,8 +39,12 @@ func main() {
 	base := filepath.Base(dir)
 	relativepath := filepath.Join("master_academy")
 	fullpath, _ := filepath.Abs("master_academy")
+	// D:\GALANG\src\master_academy\lecture_24\practice\master_academy
+	newpath := filepath.Join(fullpath, "..", "..", "lecture_24_backup")
 	fmt.Println(base)
-	fmt.Println(relativepath, "\n", fullpath)
+	fmt.Println(relativepath, "\n", fullpath, "\n", newpath)
+
+	os.Mkdir(newpath, 777)
 
 }
 
