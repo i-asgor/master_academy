@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/360EntSecGroup-Skylar/excelize"
 )
 
 func main() {
@@ -45,7 +47,19 @@ func main() {
 	// fmt.Println(relativepath, "\n", fullpath, "\n", newpath)
 
 	// os.Mkdir("D:\\TEST", 777)
-	os.Rename("D:\\TEST", "D:\\TEST_01")
+	// os.Rename("D:\\TEST", "D:\\TEST_01")
+	f := excelize.NewFile()
+	// Create a new sheet.
+	index := f.NewSheet("Sheet2")
+	// Set value of a cell.
+	f.SetCellValue("Sheet2", "A2", "Hello world.")
+	f.SetCellValue("Sheet1", "B2", 100)
+	// Set active sheet of the workbook.
+	f.SetActiveSheet(index)
+	// Save spreadsheet by the given path.
+	if err := f.SaveAs("Book1.xlsx"); err != nil {
+		fmt.Println(err)
+	}
 
 }
 
