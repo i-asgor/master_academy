@@ -44,7 +44,8 @@ func main() {
 	// fmt.Println(base)
 	// fmt.Println(relativepath, "\n", fullpath, "\n", newpath)
 
-	os.Mkdir("D:\\TEST", 777)
+	// os.Mkdir("D:\\TEST", 777)
+	os.Rename("D:\\TEST", "D:\\TEST_01")
 
 }
 
