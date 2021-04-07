@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 func main() {
-	// dir, err := os.Getwd()
-	// if err != nil {
-	// 	fmt.Println(err.Error())
-	// }
+	dir, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 
 	// fmt.Println(dir)
 
@@ -27,10 +28,19 @@ func main() {
 	// fmt.Println(fi.Name())
 	// fmt.Println(fi.Size())
 
-	err := os.Mkdir("master_academy", 0777)
-	if err != nil {
-		fmt.Println(err.Error())
-	}
+	// How to make folder
+	// err := os.Mkdir("master_academy", 0777)
+	// if err != nil {
+	// 	fmt.Println(err.Error())
+	// }
+
+	// base := filepath.Base("./")
+	// base := filepath.Base("./master_academy")
+	base := filepath.Base(dir)
+	relativepath := filepath.Join("master_academy")
+	fullpath, _ := filepath.Abs("master_academy")
+	fmt.Println(base)
+	fmt.Println(relativepath, "\n", fullpath)
 
 }
 
