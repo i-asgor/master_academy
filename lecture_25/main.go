@@ -6,8 +6,12 @@ import (
 )
 
 func main() {
+
 	go cooking("rice ")
 	cooking("curry ")
+
+	time.Sleep(time.Second * 10)
+
 }
 
 func cooking(msg string) {
