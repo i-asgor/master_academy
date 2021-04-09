@@ -9,6 +9,7 @@ import (
 func main() {
 
 	//password encrypt
+	// bcrypt.CompareHashAndPassword()
 	bs, err := bcrypt.GenerateFromPassword([]byte("test123"), 14)
 	if err != nil {
 		fmt.Println(err.Error())
