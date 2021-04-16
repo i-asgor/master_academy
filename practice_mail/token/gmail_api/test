@@ -1,0 +1,124 @@
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/google"
+)
+
+var google0authConfig = &oauth2.Config{
+	ClientID:     "577983635865-m2bl6otpl2teiodj8aunc15g0r5f6gpp.apps.googleusercontent.com",
+	ClientSecret: "fVDLYWgEfnX4AYYuDCKIu3mC",
+	Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email"},
+	RedirectURL:  "http://localhost:8080/callback",
+	Endpoint:     google.Endpoint,
+}
+var randomState = "random"
+
+func main() {
+	http.HandleFunc("/", handleHome)
+	http.HandleFunc("/login", handleLogin)
+	http.HandleFunc("/callback", handleCallback)
+	http.ListenAndServe(":8080", nil)
+}
+
+func handleHome(w http.ResponseWriter, r *http.Request) {
+	var html = `<html><body><a href="/login">Google Log In</a></body></html>`
+	fmt.Fprint(w, html)
+}
+
+func handleLogin(w http.ResponseWriter, r *http.Request) {
+	url := google0authConfig.AuthCodeURL(randomState)
+	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+}
+
+func handleCallback(w http.ResponseWriter, r *http.Request) {
+	if r.FormValue("state") != randomState {
+		fmt.Println("state is not valid")
+		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+		return
+	}
+
+	token, err := google0authConfig.Exchange(oauth2.NoContext, r.FormValue("code"))
+	fmt.Println(token)
+	if err != nil {
+		fmt.Printf("could not get token: %s\n", err.Error())
+		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+		return
+	}
+
+	resp, err := http.Get("https://www.googleapis.com/oauth2/v2/userinfo?access_token=" + token.AccessToken)
+	if err != nil {
+		fmt.Printf("could not create get request: %s\n", err.Error())
+		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+		return
+	}
+
+	defer resp.Body.Close()
+
+	content, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Printf("could not parse response: %s\n", err.Error())
+		http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+		return
+	}
+	fmt.Fprintf(w, "Response: %s", content)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://gmail.googleapis.com/gmail/v1/users/i.joni40@gmail.com/messages"
+  method := "GET"
+
+  payload := strings.NewReader(``)
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+  req.Header.Add("Authorization", "Bearer ya29.a0AfH6SMAbt39gqXgmSuaR_1xfLx-MkwIQxPrQh2tBkop25eUMiF9Koo7h-I0XIdfeK7tvnaBadBz_i0fMPdNi0MdRF7709he8kO_cMGSH-JCsY2QYiG_u6bGO0QK6bQJh9RlmtLAcTa46P70r4Jt7vG25hvHW")
+
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
+
+  body, err := ioutil.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(body))
+}
