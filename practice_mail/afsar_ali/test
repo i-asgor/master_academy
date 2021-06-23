@@ -1,0 +1,58 @@
+client-id: 465885968547-n2su4qbg9e6t44nsq783be5i7j99et30.apps.googleusercontent.com
+Secret-id: K0k7BKVB3q7j97unNkoouobd
+
+
+=============================================
+https://accounts.google.com/o/oauth2/v2/auth?
+ scope=https://mail.google.com&
+ access_type=offline&
+ include_granted_scopes=true&
+ response_type=code&
+ state=state_parameter_passthrough_value&
+ redirect_uri=http://localhost&
+ client_id=465885968547-n2su4qbg9e6t44nsq783be5i7j99et30.apps.googleusercontent.com
+
+ ==============================================
+
+http://localhost/?state=state_parameter_passthrough_value&code=4/0AY0e-g5VFXCPa6J8hFV7r6VqOgAuGiLFOigNaKkMYDohk3PQiX8QTeT1-0tJYiHzZrUD1Q&scope=https://mail.google.com/
+
+
+ =================================================
+
+ POST /token HTTP/1.1
+Host: oauth2.googleapis.com
+Content-Type: application/x-www-form-urlencoded
+
+code=4/0AY0e-g5VFXCPa6J8hFV7r6VqOgAuGiLFOigNaKkMYDohk3PQiX8QTeT1-0tJYiHzZrUD1Q&
+client_id=465885968547-n2su4qbg9e6t44nsq783be5i7j99et30.apps.googleusercontent.com&
+client_secret=K0k7BKVB3q7j97unNkoouobd&
+redirect_uri=http://localhost&
+grant_type=authorization_code
+
+
+====================================================
+curl \
+--request POST \
+--data "code=[Authentcation code from authorization link]&client_id=[Application Client Id]&client_secret=[Application Client Secret]&redirect_uri=http://localhost&grant_type=authorization_code​" \
+https://accounts.google.com/o/oauth2/token
+
+==================================================
+
+curl \
+--request POST \
+--data "code=4/0AY0e-g5VFXCPa6J8hFV7r6VqOgAuGiLFOigNaKkMYDohk3PQiX8QTeT1-0tJYiHzZrUD1Qg&client_id=465885968547-n2su4qbg9e6t44nsq783be5i7j99et30.apps.googleusercontent.com&client_secret=K0k7BKVB3q7j97unNkoouobd&redirect_uri=http://localhost&grant_type=authorization_code​" \
+https://accounts.google.com/o/oauth2/token
+
+
+=====================================================
+curl \
+--request POST \
+--data "code=[4/0AY0e-g5VFXCPa6J8hFV7r6VqOgAuGiLFOigNaKkMYDohk3PQiX8QTeT1-0tJYiHzZrUD1Qg]&client_id=[465885968547-n2su4qbg9e6t44nsq783be5i7j99et30.apps.googleusercontent.com]&client_secret=[K0k7BKVB3q7j97unNkoouobd]&redirect_uri=http://localhost&grant_type=authorization_code" \
+https://accounts.google.com/o/oauth2/token
+
+
+
+
+
+
+
